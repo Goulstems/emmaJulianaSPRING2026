@@ -1,11 +1,5 @@
-//get button first
-//apply click listener
-
-    //click should
-        //get input data
-            //return animal sound
-
-let animalSounds ={
+//Declarations / Data / Dependencies
+let animalSoundsText ={
     "dog": "woof",
     "cat": "meow",
     "rabbit": "thump",
@@ -14,12 +8,20 @@ let animalSounds ={
     "shark":"dununununu",
     "sheep":"baaaaaaa!"
 };
+let sounds = {
+    "cat": "https://www.epidemicsound.com/sound-effects/tracks/e73a8b9f-ee00-410f-809d-bdf1de200373/",
+}
+
+//Elements on the screen
 const input = document.getElementById("animalNameInput");
 const button = document.getElementById("submit");
 const feedback = document.getElementById("animalSoundFeedback");
+const audio = document.getElementById("sound");
 
+//Connect CODE to clicking the `button`
 button.addEventListener("click",()=>{
-    let animal = input.value;
-    let animalSound = animalSounds[animal];
-    feedback.innerHTML = animalSound;
+    let userInput = input.value;
+    audio.src = sounds[userInput];
+    audio.play();
+    feedback.innerHTML = animalSoundsText[userInput];
 });

@@ -1,0 +1,55 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: grid;
+	place-content: center;
+	gap: 12px;
+	padding: 24px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background: linear-gradient(135deg, #eef6ff, #f8fbff);
+	color: #1f2a44;
+}
+
+#animalNameInput,
+#submit {
+	font: inherit;
+	border-radius: 10px;
+	border: 1px solid #c8d6eb;
+	padding: 10px 12px;
+}
+
+#animalNameInput {
+	width: min(360px, 80vw);
+	background: #ffffff;
+}
+
+#animalNameInput:focus {
+	outline: 2px solid #8db7ff;
+	outline-offset: 1px;
+}
+
+#submit {
+	background: #2f6fed;
+	border-color: #2f6fed;
+	color: #ffffff;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+#submit::before {
+	content: "Get Sound";
+}
+
+#submit:hover {
+	background: #245ed0;
+}
+
+#animalSoundFeedback {
+	margin: 0;
+	min-height: 1.4em;
+	font-weight: 600;
+}
