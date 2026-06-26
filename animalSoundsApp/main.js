@@ -9,8 +9,14 @@ let animalSoundsText ={
     "sheep":"baaaaaaa!"
 };
 let sounds = {
-    "cat": "https://www.epidemicsound.com/sound-effects/tracks/e73a8b9f-ee00-410f-809d-bdf1de200373/",
-}
+    "cat": "./sounds/cat.mp3",
+    "dog": "./sounds/dog.wav",
+    "rabbit": "./sounds/rabbit.mp3",
+    "hamster": "./sounds/hamster.mp3",
+    "parrot":"./sounds/parrot.mp3",
+    "shark": "./sounds/shark.mp3",
+    "sheep": "./sounds/sheep.mp3"
+};
 
 //Elements on the screen
 const input = document.getElementById("animalNameInput");
@@ -21,7 +27,9 @@ const audio = document.getElementById("sound");
 //Connect CODE to clicking the `button`
 button.addEventListener("click",()=>{
     let userInput = input.value;
-    audio.src = sounds[userInput];
-    audio.play();
-    feedback.innerHTML = animalSoundsText[userInput];
+    let soundUrl = sounds[userInput];
+
+    audio.src = soundUrl;
+    audio.play()
+    feedback.textContent = animalSoundsText[userInput];
 });
